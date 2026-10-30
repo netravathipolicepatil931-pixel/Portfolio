@@ -1,87 +1,74 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Award, ShieldCheck, CheckCircle2 } from 'lucide-react';
-import { certifications } from '../data/portfolioData.js';
+import { Award, CheckCircle, BarChart3, Network, ArrowUpRight } from 'lucide-react';
+import { certificationsData } from '../data/portfolioData.js';
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-14">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400 mb-3">
-            <span>05</span>
-            <span aria-hidden="true">·</span>
-            <span>Certifications</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4">
-            Professional certifications & coursework credentials.
-          </h2>
-          <p className="text-base text-slate-400 leading-relaxed">
-            Specialized learning programs covering deep neural networks, GPU computing foundations, and machine learning techniques.
-          </p>
+    <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/5" id="certifications">
+      {/* Section Header */}
+      <div className="flex flex-col space-y-2 mb-12">
+        <div className="flex items-center gap-2 font-mono text-xs text-[#38BDF8] tracking-widest uppercase">
+          <Award className="w-4 h-4 text-[#38BDF8]" />
+          <span>05 / CERTIFICATIONS</span>
         </div>
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[#EAF1FF]">
+          Learning Beyond the Classroom.
+        </h2>
+        <p className="font-body text-sm md:text-base text-[#9AA8BF] max-w-2xl">
+          Verified continuous education credentials acquired through industry leaders and academic platforms.
+        </p>
+      </div>
 
-        {/* Certifications Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {certifications.map((cert, index) => (
+      {/* Credential Showcase Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {certificationsData.map((cert, idx) => {
+          const Icon = idx === 0 ? Award : idx === 1 ? BarChart3 : Network;
+          const isCyan = cert.color === '#38BDF8';
+          const borderHover = isCyan ? 'hover:border-[#38BDF8]/40' : 'hover:border-[#9B7BFF]/40';
+          const titleHover = isCyan ? 'group-hover:text-[#38BDF8]' : 'group-hover:text-[#9B7BFF]';
+          const iconColor = isCyan ? 'text-[#38BDF8]' : 'text-[#9B7BFF]';
+          const iconBg = isCyan ? 'bg-[#38BDF8]/10 border-[#38BDF8]/30' : 'bg-[#9B7BFF]/10 border-[#9B7BFF]/30';
+
+          return (
             <motion.div
-              key={index}
+              key={cert.id}
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: index * 0.08 }}
-              whileHover={{ y: -3 }}
-              className="glass-panel rounded-2xl p-6 sm:p-7 border border-slate-800 hover:border-violet-500/40 hover:bg-slate-850/80 transition-all flex flex-col justify-between shadow-lg hover:shadow-violet-950/20"
+              transition={{ delay: idx * 0.08 }}
+              className={`glass-card rounded-2xl p-6 border border-white/10 flex flex-col justify-between ${borderHover} transition-all duration-300 group`}
             >
-              <div>
-                <div className="flex items-start justify-between gap-4 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-violet-500/15 text-violet-400 flex items-center justify-center shrink-0 border border-violet-500/20">
-                    <Award className="w-5 h-5" />
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className={`w-10 h-10 rounded-xl ${iconBg} border flex items-center justify-center ${iconColor} group-hover:scale-105 transition-transform`}>
+                    <Icon className="w-5 h-5" />
                   </div>
-
-                  <div className="flex items-center gap-1.5 text-[11px] font-mono text-emerald-400 bg-emerald-950/40 px-2.5 py-1 rounded-md border border-emerald-800/40">
-                    <ShieldCheck className="w-3.5 h-3.5" />
-                    <span>Verified Completion</span>
-                  </div>
+                  <span className="inline-flex items-center gap-1 font-mono text-[10px] text-[#38BDF8] px-2 py-0.5 rounded-full bg-[#38BDF8]/10 border border-[#38BDF8]/20">
+                    <CheckCircle className="w-3 h-3 text-[#38BDF8]" />
+                    VERIFIED
+                  </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-white leading-snug mb-1.5">
-                  {cert.title}
-                </h3>
-
-                <div className="flex flex-wrap items-center gap-x-2 text-xs text-slate-400 font-mono mb-4">
-                  <span className="text-cyan-400 font-semibold">{cert.issuer}</span>
-                  <span aria-hidden="true" className="text-slate-600">·</span>
-                  <span>{cert.instructor}</span>
-                  <span aria-hidden="true" className="text-slate-600">·</span>
-                  <span>Issued {cert.date}</span>
+                <div>
+                  <h3 className={`font-display text-base font-semibold text-[#EAF1FF] ${titleHover} transition-colors`}>
+                    {cert.title}
+                  </h3>
+                  <p className="font-mono text-xs text-[#38BDF8] mt-1">{cert.issuer}</p>
                 </div>
 
-                {/* Skills tags rendered as clean unboxed inline text */}
-                <div className="pt-3 border-t border-slate-800/80">
-                  <div className="text-[11px] font-mono uppercase text-slate-500 mb-2">
-                    Core Competencies Covered
-                  </div>
-                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-slate-300 font-mono">
-                    {cert.skills.map((skill, sIdx) => (
-                      <React.Fragment key={skill}>
-                        <span>{skill}</span>
-                        {sIdx < cert.skills.length - 1 && <span className="text-slate-600">·</span>}
-                      </React.Fragment>
-                    ))}
-                  </div>
-                </div>
+                <p className="font-body text-xs text-[#9AA8BF] leading-relaxed">
+                  {cert.description}
+                </p>
               </div>
 
-              {/* Bottom status */}
-              <div className="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs text-slate-500 font-mono">
-                <span>Verified Curriculum</span>
-                <span className="text-violet-400/90 font-semibold">Active Credential</span>
+              <div className="pt-4 mt-6 border-t border-white/10 flex items-center justify-between font-mono text-[10px]">
+                <span className="text-[#9AA8BF]">{cert.credentialTag}</span>
+                <ArrowUpRight className={`w-4 h-4 ${iconColor}`} />
               </div>
             </motion.div>
-          ))}
-        </div>
+          );
+        })}
       </div>
     </section>
   );

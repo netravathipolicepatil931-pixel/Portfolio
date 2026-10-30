@@ -1,115 +1,140 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Brain, Cpu, Workflow, GraduationCap, CheckCircle2, Award, Sparkles, Code2, Globe } from 'lucide-react';
-import { aboutMe, personalInfo } from '../data/portfolioData.js';
+import { Terminal, BookOpen, Lightbulb, Wrench, GraduationCap, MapPin } from 'lucide-react';
+import { personalInfo, aboutNarrative } from '../data/portfolioData.js';
 
 export default function About() {
-  const iconMap = [Code2, Globe, Brain];
-
   return (
-    <section id="about" className="py-24 relative border-t border-slate-900 bg-slate-950/40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-16">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400 mb-3">
-            <span>01</span>
-            <span aria-hidden="true">·</span>
-            <span>About Me</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4">
-            Engineering background & problem-solving mindset.
-          </h2>
-          <p className="text-base text-slate-400 leading-relaxed">
-            Combining academic rigor in Artificial Intelligence & Machine Learning with practical web and software engineering.
-          </p>
+    <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/5" id="about">
+      {/* Section Header */}
+      <div className="flex flex-col space-y-2 mb-12">
+        <div className="flex items-center gap-2 font-mono text-xs text-[#38BDF8] tracking-widest uppercase">
+          <Terminal className="w-4 h-4 text-[#38BDF8]" />
+          <span>01 / ABOUT ME</span>
         </div>
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[#EAF1FF]">
+          Driven by Curiosity. Defined by Creation.
+        </h2>
+      </div>
 
-        {/* 2-Column Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left Column: Narrative paragraphs */}
-          <div className="lg:col-span-7 space-y-6">
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-100 leading-snug">
-              {aboutMe.headline}
-            </h3>
-
-            {aboutMe.paragraphs.map((para, idx) => (
-              <p key={idx} className="text-slate-300 leading-relaxed text-sm sm:text-base">
-                {para}
-              </p>
-            ))}
-
-            {/* Academic Highlight Callout with Correct CGPA 9.19 */}
-            <motion.div 
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mt-8 p-6 rounded-2xl glass-panel border border-violet-500/25 bg-slate-900/60 shadow-lg relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-violet-600/10 to-cyan-500/10 blur-2xl pointer-events-none" />
-              
-              <div className="flex items-start gap-4 relative z-10">
-                <div className="p-3 rounded-xl bg-violet-500/15 text-violet-300 shrink-0 border border-violet-500/30">
-                  <GraduationCap className="w-6 h-6" />
-                </div>
-                <div>
-                  <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <h4 className="text-base font-bold text-white">
-                      {personalInfo.degree} · {personalInfo.branch}
-                    </h4>
-                    <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded-full bg-emerald-950/80 text-emerald-300 border border-emerald-800/60">
-                      {personalInfo.cgpa}
-                    </span>
-                  </div>
-                  <p className="text-xs text-slate-300 font-medium">
-                    {personalInfo.university} · {personalInfo.currentYear} (2022–2026)
-                  </p>
-                  <p className="text-xs text-slate-400 mt-2.5 leading-relaxed">
-                    Specializing in Artificial Intelligence and Machine Learning. Building practical proficiency in data structures, algorithms, modular web applications, and data-driven problem solving.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* Left: Profile Card Frame + Prominent Academic Highlight */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="lg:col-span-5 glass-card rounded-2xl p-6 relative overflow-hidden border border-white/10"
+        >
+          <div className="flex items-center justify-between pb-4 border-b border-white/5 mb-6 font-mono text-[11px] text-[#9AA8BF]">
+            <span>IDENTITY_OVERVIEW</span>
+            <span className="inline-flex items-center gap-1.5 text-[#38BDF8]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#38BDF8]"></span>
+              ACTIVE LEARNER
+            </span>
           </div>
 
-          {/* Right Column: Engineering Pillars */}
-          <div className="lg:col-span-5 space-y-4">
-            <div className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">
-              Core Technical Competencies
+          {/* Profile Photograph Window Frame */}
+          <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-[#080B14] border border-white/10 flex items-center justify-center group">
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#9B7BFF]/20 via-transparent to-[#38BDF8]/15 z-10 pointer-events-none" />
+            <img
+              src={personalInfo.avatar}
+              alt="Netravathi Police Patil Profile"
+              className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+            <div className="absolute bottom-2 left-3 z-20 font-mono text-[10px] text-white/90 bg-[#080B14]/80 px-2 py-0.5 rounded backdrop-blur-sm">
+              LOC: Bengaluru, India (REVA)
             </div>
+          </div>
 
-            {aboutMe.pillars.map((pillar, index) => {
-              const Icon = iconMap[index % iconMap.length];
-              return (
-                <div
-                  key={index}
-                  className="p-5 rounded-xl glass-panel border border-slate-800/80 hover:border-violet-500/40 transition-colors"
-                >
-                  <div className="flex items-center gap-3 mb-2.5">
-                    <div className="w-8 h-8 rounded-lg bg-violet-500/15 text-violet-400 flex items-center justify-center shrink-0 border border-violet-500/20">
-                      <Icon className="w-4 h-4" />
-                    </div>
-                    <h4 className="text-sm font-bold text-slate-100">
-                      {pillar.title}
-                    </h4>
-                  </div>
-                  <p className="text-xs text-slate-400 leading-relaxed pl-11">
-                    {pillar.description}
-                  </p>
-                </div>
-              );
-            })}
-
-            {/* Quick Facts Strip */}
-            <div className="pt-4 border-t border-slate-800/80 grid grid-cols-2 gap-4">
-              <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
-                <span className="text-[11px] font-mono text-cyan-400 block mb-1">Academic Standing</span>
-                <span className="text-xs font-semibold text-slate-200">{personalInfo.cgpa}</span>
-              </div>
-              <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
-                <span className="text-[11px] font-mono text-cyan-400 block mb-1">Current Progress</span>
-                <span className="text-xs font-semibold text-slate-200">2nd Year Undergrad</span>
-              </div>
+          {/* Prominent Academic Highlight Badge: 9.19 / 10 CGPA */}
+          <div className="mt-6 p-4 rounded-xl bg-gradient-to-r from-[#9B7BFF]/15 via-[#121A2B] to-[#38BDF8]/15 border border-[#9B7BFF]/40 flex items-center justify-between">
+            <div className="space-y-0.5">
+              <span className="font-mono text-[10px] uppercase text-[#38BDF8] tracking-wider block">ACADEMIC EXCELLENCE</span>
+              <span className="font-display font-bold text-xl text-[#EAF1FF]">
+                9.19 <span className="text-sm font-normal text-[#9AA8BF]">/ 10 CGPA</span>
+              </span>
             </div>
+            <div className="px-3 py-1 rounded-lg bg-[#080B14] border border-white/10 text-right">
+              <span className="font-mono text-xs text-[#9B7BFF] font-medium block">2nd Year B.Tech</span>
+              <span className="font-mono text-[10px] text-[#9AA8BF]">REVA University</span>
+            </div>
+          </div>
+
+          {/* Metadata Spec Grid */}
+          <div className="grid grid-cols-2 gap-3 mt-4">
+            <div className="p-3 rounded-xl bg-[#080B14]/70 border border-white/5">
+              <span className="block font-mono text-[10px] text-[#9AA8BF]">MAJOR</span>
+              <span className="font-mono text-xs text-[#EAF1FF] font-medium">CSE (AI &amp; ML)</span>
+            </div>
+            <div className="p-3 rounded-xl bg-[#080B14]/70 border border-white/5">
+              <span className="block font-mono text-[10px] text-[#9AA8BF]">LOCATION</span>
+              <span className="font-mono text-xs text-[#EAF1FF] font-medium">Bengaluru, IN</span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Right: Narrative & 3 Core Values */}
+        <div className="lg:col-span-7 space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="glass-card rounded-2xl p-6 md:p-8 border border-white/10 space-y-4"
+          >
+            <p className="font-body text-[#EAF1FF] text-base md:text-lg leading-relaxed">
+              I am an undergraduate student in <span className="text-[#9B7BFF] font-semibold">Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning</span> at REVA University, Bengaluru.
+            </p>
+            <p className="font-body text-[#9AA8BF] leading-relaxed">
+              My engineering journey is driven by a deep interest in how computational logic, data models, and modern software principles combine to solve practical problems. Rather than treating theory as abstract textbook rules, I focus on turning programmatic concepts into functional digital tools.
+            </p>
+            <p className="font-body text-[#9AA8BF] leading-relaxed">
+              Whether building accessible web applications, implementing data structures, or experimenting with foundational machine learning models, I approach every challenge with thorough discipline, curiosity, and continuous improvement.
+            </p>
+          </motion.div>
+
+          {/* Three Core Value Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <motion.div 
+              whileHover={{ y: -3 }}
+              className="glass-card rounded-xl p-5 border border-white/5 hover:border-[#9B7BFF]/40 transition-all duration-200"
+            >
+              <div className="w-8 h-8 rounded-lg bg-[#9B7BFF]/10 text-[#9B7BFF] flex items-center justify-center mb-3">
+                <BookOpen className="w-5 h-5" />
+              </div>
+              <h4 className="font-display text-sm font-semibold text-[#EAF1FF] mb-1">Continuous Learning</h4>
+              <p className="font-body text-xs text-[#9AA8BF] leading-snug">
+                Actively strengthening core algorithms and tracking modern paradigms in applied AI and software engineering.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ y: -3 }}
+              className="glass-card rounded-xl p-5 border border-white/5 hover:border-[#38BDF8]/40 transition-all duration-200"
+            >
+              <div className="w-8 h-8 rounded-lg bg-[#38BDF8]/10 text-[#38BDF8] flex items-center justify-center mb-3">
+                <Lightbulb className="w-5 h-5" />
+              </div>
+              <h4 className="font-display text-sm font-semibold text-[#EAF1FF] mb-1">Creative Problem Solving</h4>
+              <p className="font-body text-xs text-[#9AA8BF] leading-snug">
+                Approaching messy real-world challenges through clean logic, step-by-step design, and scalable execution.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ y: -3 }}
+              className="glass-card rounded-xl p-5 border border-white/5 hover:border-white/20 transition-all duration-200"
+            >
+              <div className="w-8 h-8 rounded-lg bg-white/10 text-[#EAF1FF] flex items-center justify-center mb-3">
+                <Wrench className="w-5 h-5" />
+              </div>
+              <h4 className="font-display text-sm font-semibold text-[#EAF1FF] mb-1">Real-World Solutions</h4>
+              <p className="font-body text-xs text-[#9AA8BF] leading-snug">
+                Developing practical applications focused on tangible user utility, clean accessibility, and functional value.
+              </p>
+            </motion.div>
           </div>
         </div>
       </div>

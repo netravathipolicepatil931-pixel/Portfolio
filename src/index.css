@@ -3,8 +3,21 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+
+  --color-obsidian: #080B14;
+  --color-surface-dark: #0e1322;
+  --color-surface-card: #121A2B;
+  --color-surface-card-subtle: rgba(18, 26, 43, 0.7);
+  --color-primary: #9B7BFF;
+  --color-primary-light: #d0bcff;
+  --color-secondary: #38BDF8;
+  --color-text-primary: #EAF1FF;
+  --color-text-muted: #9AA8BF;
+  --color-border-glass: rgba(255, 255, 255, 0.08);
+  --color-border-glass-hover: rgba(155, 123, 255, 0.35);
 }
 
 :root {
@@ -12,38 +25,79 @@
 }
 
 body {
-  font-family: var(--font-sans);
-  background-color: #030712;
-  color: #f1f5f9;
+  font-family: var(--font-body);
+  background-color: #080B14;
+  color: #EAF1FF;
   overflow-x: hidden;
 }
 
-/* Subtle background tech grid */
-.tech-grid-pattern {
-  background-size: 48px 48px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display);
 }
 
-.tech-dot-pattern {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 24px 24px;
+code, pre, .font-mono {
+  font-family: var(--font-mono);
 }
 
-/* Glassmorphism surfaces */
-.glass-panel {
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+/* Glassmorphism surfaces from Stitch design */
+.glass-card {
+  background: rgba(18, 26, 43, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-.glass-panel-hover {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+.glass-card:hover {
+  border-color: rgba(155, 123, 255, 0.32);
 }
-.glass-panel-hover:hover {
-  background: rgba(30, 41, 59, 0.75);
-  border-color: rgba(56, 189, 248, 0.25);
-  transform: translateY(-2px);
+
+.glass-nav {
+  background: rgba(8, 11, 20, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #EAF1FF 10%, #9B7BFF 60%, #38BDF8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-subtle {
+  background: linear-gradient(135deg, #EAF1FF 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-accent {
+  box-shadow: 0 0 35px -5px rgba(155, 123, 255, 0.22);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 30px -6px rgba(56, 189, 248, 0.22);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080B14;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -1,356 +1,363 @@
 /**
  * Portfolio Data for Netravathi Police Patil
- * B.Tech CSE (AI & ML) - Second Year, REVA University
- * Keep all personal details and project information editable here.
+ * Second-year B.Tech CSE (AI & ML) - REVA University, Bengaluru
+ * Aligned with the Stitch Design System (Cosmic Obsidian Intelligence).
  */
 
 export const personalInfo = {
   name: "Netravathi Police Patil",
-  role: "AI & Machine Learning Engineering Student",
-  tagline: "Building intuitive web applications, intelligent study tools, and software solutions with engineering precision.",
+  monogram: "NP",
+  eyebrow: "AI / ML ENGINEERING • SOFTWARE DEVELOPMENT",
+  role: "Aspiring AI/ML Engineer | Python Developer | Web Development Enthusiast",
+  headline: "Hi, I'm Netravathi.",
+  subheadline: "Engineering Ideas Into Intelligent Experiences.",
+  tagline: "Exploring intelligent systems, software development, and practical technology solutions.",
   university: "REVA University, Bengaluru",
-  degree: "Bachelor of Technology (B.Tech)",
-  branch: "Computer Science and Engineering",
+  degree: "Bachelor of Technology in Computer Science and Engineering",
   specialization: "Artificial Intelligence and Machine Learning",
-  currentYear: "Second Year",
-  cgpa: "9.19 / 10 CGPA",
-  location: "Bengaluru, Karnataka, India",
+  currentYear: "Second Year (2023 – Present)",
+  cgpa: "9.19 / 10",
+  cgpaFull: "9.19 / 10 CGPA",
+  location: "Bengaluru (Bangalore), Karnataka, India • IST (UTC+5:30)",
+  locationShort: "Bengaluru, IN",
   email: "netravathipolicepatil931@gmail.com",
   github: "https://github.com/NetravathiPatil",
-  linkedin: "https://www.linkedin.com/in/netravathi-police-patil/",
-  status: "Second Year B.Tech Scholar · Open for Tech Internships & Collaborations",
-  avatar: "/assets/aistudio/Professional_Portrait_with_Elegant_Details_977d7d4b.png",
-  summary: "Motivated Computer Science & Engineering student specializing in AI & ML at REVA University. Dedicated to turning ideas into real-world applications across web development, software engineering, and practical problem-solving.",
-  resumeUrl: "#contact",
+  linkedin: "https://www.linkedin.com/in/netravathi-p-363467385/",
+  avatar: "/assets/aistudio/Neon_Tech_Portfolio_Portrait_b793196b.png",
+  bio: "I'm a second-year AI & ML engineering student at REVA University, exploring intelligent systems, software development, and practical technology solutions."
 };
 
-export const metrics = [
-  { label: "Academic CGPA", value: "9.19 / 10" },
-  { label: "Engineering Projects", value: "6 Built" },
-  { label: "B.Tech Progress", value: "2nd Year" },
-  { label: "Core Competencies", value: "React & ML" },
-];
-
-export const aboutMe = {
-  headline: "Second-Year Engineering Scholar with a Drive for Practical Problem Solving",
+export const aboutNarrative = {
   paragraphs: [
-    "I am a Second Year B.Tech student in Computer Science and Engineering specializing in Artificial Intelligence and Machine Learning at REVA University, Bengaluru. I maintain an academic standing of 9.19 / 10 CGPA, combining a strong theoretical basis in computer science with active, hands-on development.",
-    "My focus centers on developing responsive web applications, exploring intuitive user interfaces, and learning practical software engineering principles. From building productivity tools and management systems to creating intelligent educational solutions, I enjoy the complete problem-to-product journey.",
-    "As I progress through my engineering degree, I am continuously broadening my expertise in modern JavaScript frameworks, responsive styling, algorithmic problem solving, and the integration of machine learning concepts into everyday software."
+    "I am an undergraduate student in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning at REVA University, Bengaluru.",
+    "My engineering journey is driven by a deep interest in how computational logic, data models, and modern software principles combine to solve practical problems. Rather than treating theory as abstract textbook rules, I focus on turning programmatic concepts into functional digital tools.",
+    "Whether building accessible web applications, implementing data structures, or experimenting with foundational machine learning models, I approach every challenge with thorough discipline, curiosity, and continuous improvement."
   ],
-  pillars: [
+  coreValues: [
     {
-      title: "Core Computer Science & Programming",
-      description: "Solid grounding in data structures, algorithms, object-oriented concepts, and clean modular code in JavaScript, Python, and C++."
+      title: "Continuous Learning",
+      description: "Actively strengthening core algorithms and tracking modern paradigms in applied AI and software engineering.",
+      icon: "auto_stories",
+      color: "#9B7BFF"
     },
     {
-      title: "Interactive Web & UI Engineering",
-      description: "Building responsive, accessible web applications using modern React, component architecture, CSS layouts, and intuitive UX design."
+      title: "Creative Problem Solving",
+      description: "Approaching messy real-world challenges through clean logic, step-by-step design, and scalable execution.",
+      icon: "lightbulb",
+      color: "#38BDF8"
     },
     {
-      title: "AI & ML Academic Specialization",
-      description: "Exploring foundational machine learning workflows, data preprocessing, and intelligent application features at REVA University."
+      title: "Real-World Solutions",
+      description: "Developing practical applications focused on tangible user utility, clean accessibility, and functional value.",
+      icon: "construction",
+      color: "#EAF1FF"
     }
   ]
 };
 
-export const skillsCategories = [
-  {
-    category: "Languages & Core",
-    description: "Core programming and scripting languages used in coursework and projects.",
+export const skillsCategories = {
+  programmingLanguages: {
+    title: "Programming Languages",
+    subtitle: "CORE_SYNTAX",
+    description: "Core expressive languages for algorithmic implementation, script automation, and AI workflows.",
     skills: [
-      { name: "JavaScript", level: "Proficient", icon: "FileCode" },
-      { name: "Python", level: "Proficient", icon: "Code2" },
-      { name: "C++", level: "Intermediate", icon: "Cpu" },
-      { name: "HTML5 & CSS3", level: "Advanced", icon: "Layout" },
-      { name: "SQL", level: "Intermediate", icon: "Database" }
+      { name: "Python (Primary Focus)", primary: true, icon: "code" },
+      { name: "C Language", primary: false, icon: "data_object" },
+      { name: "JavaScript", primary: false, icon: "javascript" }
     ]
   },
-  {
-    category: "Web & Frontend Frameworks",
-    description: "Modern tools and libraries for crafting responsive web interfaces.",
+  frontendDevelopment: {
+    title: "Frontend Development",
+    subtitle: "USER_INTERFACE",
+    description: "Crafting responsive, accessible user interfaces with semantic structuring and component workflows.",
     skills: [
-      { name: "React.js", level: "Proficient", icon: "Boxes" },
-      { name: "Tailwind CSS", level: "Proficient", icon: "Palette" },
-      { name: "Responsive UI/UX", level: "Advanced", icon: "Monitor" },
-      { name: "DOM & Web APIs", level: "Advanced", icon: "Globe" },
-      { name: "Component Architecture", level: "Proficient", icon: "Layers" }
+      { name: "HTML5" },
+      { name: "CSS3" },
+      { name: "React" },
+      { name: "Responsive Layouts" }
     ]
   },
-  {
-    category: "AI & Machine Learning Foundations",
-    description: "Academic coursework and foundational concepts in AI & ML.",
+  developerTools: {
+    title: "Developer Tools",
+    description: "Version control and development environments for clean project tracking.",
+    skills: ["Git", "GitHub", "VS Code"]
+  },
+  coreConcepts: {
+    title: "Core Concepts",
+    description: "Foundations that power scalable computational reasoning and structured code.",
+    skills: ["Data Structures", "Algorithms", "Problem Solving"]
+  },
+  areasOfInterest: {
+    title: "Areas of Interest",
+    description: "Specialized academic trajectories driving my long-term engineering focus.",
     skills: [
-      { name: "Machine Learning Concepts", level: "Intermediate", icon: "Brain" },
-      { name: "Data Preprocessing", level: "Intermediate", icon: "Sliders" },
-      { name: "Algorithm Analysis", level: "Intermediate", icon: "Binary" },
-      { name: "Prompting & AI Integration", level: "Proficient", icon: "Sparkles" }
+      { name: "Artificial Intelligence", highlight: "purple" },
+      { name: "Machine Learning", highlight: "cyan" },
+      { name: "Data Science", highlight: "neutral" }
     ]
   },
-  {
-    category: "Developer Tools & Environment",
-    description: "Essential workflow tools for version control and development.",
-    skills: [
-      { name: "Git & GitHub", level: "Proficient", icon: "GitBranch" },
-      { name: "VS Code", level: "Advanced", icon: "Terminal" },
-      { name: "Chrome DevTools", level: "Proficient", icon: "Search" },
-      { name: "Vite", level: "Proficient", icon: "Zap" }
+  currentlyExploring: {
+    title: "Currently Exploring",
+    description: "Active self-study expansion beyond the current curriculum semester.",
+    tags: [
+      { name: "Backend Development", color: "cyan" },
+      { name: "Databases (SQL & DBMS)", color: "neutral" },
+      { name: "AI Integration", color: "purple" }
     ]
   }
-];
+};
 
 export const projects = [
   {
     id: "studymate-ai",
     title: "StudyMate AI",
     category: "AI & EdTech",
-    filterCategory: "AI & EdTech",
+    filterKey: "ai-edtech",
+    badgeText: "Education Technology",
     isFeatured: true,
-    shortDescription: "An intelligent study assistance project designed to help students organize learning materials, generate study resources, and improve their learning experience.",
+    fileMockup: "studymate_core.py",
+    mockupModule: "MODULE: ACTIVE",
+    mockupQuery: '> query: "Generate concise summary of Neural Network activation functions"',
+    mockupResults: [
+      "• Structured summary generated across ReLU, Sigmoid, and Softmax.",
+      "• Organized revision cards prepared."
+    ],
+    mockupFooter: "MODE: INTERACTIVE · STATUS: READY",
+    tags: ["Education Technology", "AI Concepts", "Web Development"],
+    shortDescription: "A study-assistance project exploring ways to make learning more organized and engaging through digital study tools, intelligent note organization, and structured prompt flows.",
+    stage: "CONCEPT & PROTOTYPE",
     technologies: ["JavaScript", "Web Development", "AI Concepts"],
-    badge: "Featured EdTech",
-    accentColor: "from-blue-500/20 via-violet-500/20 to-cyan-500/10",
-    themeGlow: "rgba(99, 102, 241, 0.2)",
-    icon: "Brain",
     details: {
-      problem: "Students often struggle to synthesize scattered lecture notes, track syllabi, and produce targeted revision summaries prior to exams.",
-      solution: "StudyMate AI provides an interactive workspace where learners can organize study units, structure notes logically, and generate helpful conceptual study cards and revision prompts.",
-      keyFeatures: [
-        "Structured topic and chapter notebook organization",
-        "Interactive study card generator with conceptual prompts",
-        "Clean, distraction-free study timer and progress tracker",
-        "Responsive interface tailored for desktop and mobile study sessions"
-      ],
-      technicalApproach: "Built with modular vanilla JavaScript and modern DOM manipulation, featuring structured client-side storage and responsive CSS styling for optimal student accessibility."
+      problem: "Students frequently struggle to consolidate fragmented notes across coursework and extract quick revision cards before exams.",
+      solution: "StudyMate AI explores interactive study structuring where learners can generate concise conceptual summaries, organized flashcards, and prompt flows.",
+      features: [
+        "Topic-based revision card generation",
+        "Structured summaries for algorithmic and AI concepts",
+        "Clean, focused study interface designed for minimal distraction"
+      ]
     },
     githubUrl: "https://github.com/NetravathiPatil",
-    liveDemoUrl: null
+    demoUrl: null
   },
   {
     id: "online-grocery-store",
     title: "Online Grocery Store",
-    category: "Full-Stack Web Development",
-    filterCategory: "Web Applications",
+    category: "Web Apps",
+    filterKey: "web-apps",
+    badgeText: "Web Development",
     isFeatured: true,
-    shortDescription: "An online grocery shopping application featuring product browsing, shopping cart functionality, and a user-friendly shopping experience.",
+    fileMockup: "grocery_store_app.js",
+    mockupModule: "CART_ITEMS: 03",
+    mockupItems: [
+      { name: "Fresh Fruit Box", price: "₹ 120" },
+      { name: "Organic Milk", price: "₹ 65" }
+    ],
+    mockupFooter: "STATE: RESPONSIVE DOM · CHECKOUT READY",
+    tags: ["Web Development", "JavaScript", "UI/UX"],
+    shortDescription: "A web application concept for exploring products, managing a shopping cart, and creating a convenient online grocery shopping experience.",
+    stage: "FULL PROTOTYPE",
     technologies: ["React", "JavaScript", "CSS"],
-    badge: "Featured Web App",
-    accentColor: "from-emerald-500/20 via-teal-500/20 to-blue-500/10",
-    themeGlow: "rgba(20, 184, 166, 0.2)",
-    icon: "ShoppingCart",
     details: {
-      problem: "Shoppers need an intuitive, fast, and responsive digital storefront that makes finding daily essentials effortless across devices.",
-      solution: "Engineered a dynamic React-based grocery web store featuring categorised catalogs, price filtering, instant cart state updates, and checkout summary calculation.",
-      keyFeatures: [
-        "Categorized item catalog (Fresh Produce, Dairy, Staples, Beverages)",
-        "Real-time cart state management with quantity adjustment and subtotal calculation",
-        "Interactive search and category filtering for swift discovery",
-        "Clean, responsive card grid with persistent local shopping state"
-      ],
-      technicalApproach: "Implemented using React functional components, useState and useEffect hooks for cart persistence, and modular CSS for smooth card transitions."
+      problem: "Customers need an intuitive, responsive interface to browse everyday grocery staples and track cart totals seamlessly.",
+      solution: "Engineered a responsive web store with item catalogs, live quantity updates, price computation, and cart management.",
+      features: [
+        "Categorized grocery catalog with search and filter",
+        "Real-time cart state with item counter and subtotal calculation",
+        "Accessible checkout layout built with responsive CSS"
+      ]
     },
     githubUrl: "https://github.com/NetravathiPatil",
-    liveDemoUrl: null
+    demoUrl: null
   },
   {
     id: "milk-dairy-management",
     title: "Milk Dairy Management System",
-    category: "Management System",
-    filterCategory: "Management Systems",
-    isFeatured: false,
-    shortDescription: "A digital management application designed to organize dairy operations, including milk collection, customer records, and related management workflows.",
+    category: "Management",
+    filterKey: "management",
+    icon: "inventory_2",
+    tags: ["Web Application", "Data Management"],
+    shortDescription: "A management application designed around organizing dairy-related records and operational workflows.",
+    stage: "OPERATIONAL TOOL",
     technologies: ["React", "JavaScript", "Web Development"],
-    badge: "Management Tool",
-    accentColor: "from-cyan-500/20 via-blue-500/20 to-indigo-500/10",
-    themeGlow: "rgba(6, 182, 212, 0.2)",
-    icon: "ClipboardList",
     details: {
-      problem: "Local dairy cooperatives frequently rely on manual paper logbooks for recording daily milk collection volumes, fat content, and supplier payments, leading to errors and delays.",
-      solution: "Created a unified digital dashboard for logging daily milk intake, managing customer and farmer profiles, and calculating automated billing records.",
-      keyFeatures: [
-        "Daily milk collection intake log with volume and date tracking",
-        "Customer and farmer account management directory",
-        "Automated summary calculations for payment reconciliation",
-        "Searchable transaction records with clean status tags"
-      ],
-      technicalApproach: "Crafted with React component state handling, validation logic for volumetric entries, and an intuitive tabular layout for quick data verification."
+      problem: "Manual record-keeping in local dairy operations leads to tallying errors and slow accounting reconciliation.",
+      solution: "Created an operational dashboard to track daily milk collection, farmer and customer entries, and record summaries.",
+      features: [
+        "Daily milk collection intake logs",
+        "Customer and supplier profile records",
+        "Automated summary calculations for operational oversight"
+      ]
     },
     githubUrl: "https://github.com/NetravathiPatil",
-    liveDemoUrl: null
+    demoUrl: null
   },
   {
     id: "ipl-ticket-booking",
     title: "IPL Ticket Booking System",
-    category: "Web Application",
-    filterCategory: "Web Applications",
-    isFeatured: false,
-    shortDescription: "A responsive cricket ticket booking application featuring match browsing, booking interfaces, and an intuitive user experience.",
+    category: "Web Apps",
+    filterKey: "web-apps",
+    icon: "confirmation_number",
+    tags: ["Web Development", "UI Design"],
+    shortDescription: "A ticket-booking interface project focused on browsing matches and creating an intuitive booking experience.",
+    stage: "SPORTS UI",
     technologies: ["React", "JavaScript", "CSS"],
-    badge: "Sports & Events",
-    accentColor: "from-amber-500/20 via-orange-500/20 to-red-500/10",
-    themeGlow: "rgba(245, 158, 11, 0.2)",
-    icon: "Ticket",
     details: {
-      problem: "Cricket enthusiasts need a straightforward and engaging way to browse upcoming tournament fixtures and preview ticket availability.",
-      solution: "Developed an energetic and responsive cricket ticketing web application featuring match schedules, team matchups, stand selection, and an intuitive booking checkout flow.",
-      keyFeatures: [
-        "Upcoming match fixture schedule with team logos and venue information",
-        "Interactive seating category selector (Pavilion, Club, General Stands)",
-        "Instant ticket quantity counter and dynamic pricing calculator",
-        "Confirmation summary modal with simulated digital booking pass"
-      ],
-      technicalApproach: "Utilized React state hooks to coordinate fixture filtering and tiered seat pricing, wrapped in high-contrast sports-inspired styling."
+      problem: "Sports fans require a straightforward and engaging way to check match schedules and select ticket tiers.",
+      solution: "Designed a cricket match fixture and seating tier selection interface with responsive booking flow.",
+      features: [
+        "Match fixture schedule with venue details",
+        "Interactive seating stand selection",
+        "Dynamic ticket counter and pricing checkout preview"
+      ]
     },
     githubUrl: "https://github.com/NetravathiPatil",
-    liveDemoUrl: null
+    demoUrl: null
   },
   {
     id: "my-todo-list",
     title: "My To-Do List",
-    category: "Productivity Application",
-    filterCategory: "Productivity",
-    isFeatured: false,
-    shortDescription: "A lightweight task management website that helps users create, organize, and track their daily activities.",
+    category: "Productivity",
+    filterKey: "productivity",
+    icon: "checklist",
+    tags: ["HTML", "CSS", "JavaScript"],
+    shortDescription: "A lightweight productivity application for organizing daily tasks and tracking completed activities.",
+    stage: "PRODUCTIVITY",
     technologies: ["HTML", "CSS", "JavaScript"],
-    badge: "Productivity Tool",
-    accentColor: "from-violet-500/20 via-purple-500/20 to-pink-500/10",
-    themeGlow: "rgba(168, 85, 247, 0.2)",
-    icon: "CheckSquare",
     details: {
-      problem: "Busy students and professionals need a clean, distraction-free tool to jot down, prioritize, and check off day-to-day responsibilities.",
-      solution: "Built a fast and focused task manager that lets users add tasks, toggle completion states, delete items, and filter by status (All, Active, Completed).",
-      keyFeatures: [
-        "Quick task entry with priority markers and timestamps",
-        "One-click completion toggles with smooth visual strike-through",
-        "Filtered views: All, Pending, and Completed tasks",
-        "Persistent browser storage ensuring tasks remain saved across sessions"
-      ],
-      technicalApproach: "Crafted with lightweight vanilla JavaScript, LocalStorage API persistence, and accessible keyboard-friendly input controls."
+      problem: "Daily study and programming tasks can quickly pile up without a fast, lightweight organization tool.",
+      solution: "Constructed a straightforward task management website supporting instant creation, deletion, and status toggles.",
+      features: [
+        "Quick task entry and completion toggles",
+        "Status filters (All, Active, Completed)",
+        "Local browser persistence for reliable task retention"
+      ]
     },
     githubUrl: "https://github.com/NetravathiPatil",
-    liveDemoUrl: null
+    demoUrl: null
   },
   {
     id: "personal-e-portfolio",
     title: "Personal E-Portfolio",
-    category: "Portfolio & UI/UX",
-    filterCategory: "Web Applications",
-    isFeatured: false,
-    shortDescription: "A responsive personal portfolio website showcasing technical skills, projects, education, certifications, and engineering interests.",
+    category: "Web Apps",
+    filterKey: "web-apps",
+    icon: "web",
+    tags: ["HTML", "CSS", "JavaScript", "React"],
+    shortDescription: "A responsive personal portfolio presenting my technical skills, engineering journey, and projects.",
+    stage: "ACTIVE BUILD",
     technologies: ["React", "CSS", "JavaScript"],
-    badge: "Portfolio & UX",
-    accentColor: "from-cyan-500/20 via-blue-500/20 to-violet-500/10",
-    themeGlow: "rgba(56, 189, 248, 0.2)",
-    icon: "Layout",
     details: {
-      problem: "Engineering students need a polished, modern platform to present academic milestones, genuine projects, and professional contact channels to recruiters.",
-      solution: "Designed and engineered this modern dark-themed web portfolio featuring responsive navigation, interactive project filtering, accessible modals, and smooth animations.",
-      keyFeatures: [
-        "Tailored responsive layout built for mobile, tablet, and widescreen viewports",
-        "Interactive project showcase with category filtering and deep architecture modal",
-        "Academic timeline highlighting REVA University B.Tech achievements and 9.19 CGPA",
-        "Accessible contact channels including direct one-click email copy"
-      ],
-      technicalApproach: "Built on React and Vite with Tailwind CSS, lucide-react icons, and hardware-accelerated Motion animations."
+      problem: "Students need a professional, unified digital presence to showcase academic credentials, projects, and contact channels.",
+      solution: "Designed and built this responsive portfolio following the Cosmic Obsidian Stitch design system.",
+      features: [
+        "Responsive bento grid and glassmorphism UI",
+        "Interactive category project filtering and modal inspection",
+        "Verified academic credentials with 9.19 / 10 CGPA"
+      ]
     },
     githubUrl: "https://github.com/NetravathiPatil",
-    liveDemoUrl: null
+    demoUrl: "#home"
   }
 ];
 
-export const education = [
+export const educationData = [
   {
-    degree: "Bachelor of Technology (B.Tech)",
-    branch: "Computer Science and Engineering",
-    specialization: "Artificial Intelligence and Machine Learning",
-    institution: "REVA University, Bengaluru",
-    currentYear: "Second Year",
-    period: "2022 - 2026",
-    cgpa: "9.19 / 10 CGPA",
-    sectionLabel: "04 / ACADEMIC FOUNDATIONS",
-    heading: "Engineering Knowledge. Real-World Ambition.",
-    description: "My academic journey combines foundational computer science principles, practical programming, and an expanding interest in Artificial Intelligence and Machine Learning.",
-    keyHighlights: [
-      "Consistent academic excellence with an outstanding 9.19 / 10 CGPA",
-      "Actively developing practical projects in web engineering and software design",
-      "Engaged in core computer science subjects, algorithms, and AI/ML fundamentals at REVA University"
+    id: "btech-reva",
+    title: "Bachelor of Technology in Computer Science and Engineering",
+    specialization: "Specialization: Artificial Intelligence and Machine Learning",
+    institution: "REVA UNIVERSITY, BENGALURU",
+    period: "Second Year (2023 – Present)",
+    distinction: "Academic Distinction: CGPA 9.19 / 10",
+    description: "Developing a rigorous foundation in algorithms, system architecture, probability, and intelligent model principles through laboratory experiments and semester coursework.",
+    coursework: [
+      "Data Structures & Algorithms",
+      "Foundations of AI & ML",
+      "Discrete Mathematics",
+      "Object Oriented Programming",
+      "Python & C Laboratory"
     ]
+  },
+  {
+    id: "puc-science",
+    title: "Pre-University (PCMB / Science Track)",
+    specialization: "Higher Secondary Education",
+    institution: "Karnataka, India",
+    period: "Completed",
+    distinction: null,
+    description: "Built rigorous analytical competence across advanced mathematics, physics, chemistry, and computational logic."
   }
 ];
 
-export const certifications = [
+export const certificationsData = [
   {
-    title: "Deep Learning Specialization",
-    issuer: "DeepLearning.AI / Coursera",
-    instructor: "Andrew Ng",
-    date: "2024",
-    skills: ["Neural Networks", "Convolutional Networks", "Sequence Models", "Hyperparameter Tuning"],
-    verified: true
+    id: "cert-wadhwani",
+    title: "Innovation and Entrepreneurship",
+    issuer: "Wadhwani Foundation",
+    credentialTag: "CREDENTIAL: WF-IE",
+    icon: "workspace_premium",
+    color: "#9B7BFF",
+    description: "Developed practical methodologies for opportunity discovery, creative problem solving, risk assessment, and entrepreneurial product thinking."
   },
   {
-    title: "Machine Learning Specialization",
-    issuer: "Stanford Online & DeepLearning.AI",
-    instructor: "Andrew Ng",
-    date: "2023",
-    skills: ["Supervised Learning", "Unsupervised Learning", "Algorithms", "Optimization"],
-    verified: true
+    id: "cert-ibm",
+    title: "Data Science and Data Analysis Using Python",
+    issuer: "IBM",
+    credentialTag: "ISSUER: IBM COGNITIVE",
+    icon: "query_stats",
+    color: "#38BDF8",
+    description: "Hands-on data exploration, statistical analysis, visualization workflows, and structured Python libraries for scientific analytics."
   },
   {
-    title: "TensorFlow Developer Certificate Program",
-    issuer: "Google / TensorFlow",
-    instructor: "Coursera",
-    date: "2024",
-    skills: ["TensorFlow 2.x", "Model Building", "Computer Vision Basics", "NLP Concepts"],
-    verified: true
-  },
-  {
-    title: "Fundamentals of Deep Learning",
-    issuer: "NVIDIA Deep Learning Institute (DLI)",
-    instructor: "NVIDIA",
-    date: "2024",
-    skills: ["GPU Computing", "CUDA Basics", "Pre-trained Models", "Inference"],
-    verified: true
+    id: "cert-python-dsa",
+    title: "Programming, Data Structures and Algorithms Using Python",
+    issuer: "Foundational Certification",
+    credentialTag: "DOMAIN: DSA PYTHON",
+    icon: "account_tree",
+    color: "#9B7BFF",
+    description: "Rigorous analysis of asymptotic complexity, sorting/searching efficiency, memory structures, and algorithmic formulation in Python."
   }
 ];
 
-export const careerGoals = [
+export const roadmapMilestones = [
   {
-    title: "Mastering Full-Stack & Modern Web Architecture",
-    timeline: "Short-Term Goal",
-    description: "Deepen expertise in component-driven frontend architecture, responsive design patterns, and full-stack software development to build production-grade web tools.",
-    milestones: [
-      "Build comprehensive full-stack applications with robust state management",
-      "Refine responsive design and accessible UI engineering practices",
-      "Contribute actively to developer communities and collaborative student projects"
-    ]
+    num: "01",
+    title: "Strengthen Python and Algorithms",
+    description: "Consistently solving algorithmic challenges with optimal time and space tradeoffs.",
+    icon: "terminal",
+    color: "#9B7BFF"
   },
   {
-    title: "Practical AI/ML Systems & Applied Engineering",
-    timeline: "Mid-Term Goal",
-    description: "Bridge computer science fundamentals with applied machine learning, deploying intelligent tools and integrating ML models with web interfaces.",
-    milestones: [
-      "Apply deep learning frameworks to computer vision and text processing tasks",
-      "Develop lightweight intelligent web utilities with client-side AI integration",
-      "Participate in engineering hackathons and technical project showcases"
-    ]
+    num: "02",
+    title: "Explore Advanced AI/ML Concepts",
+    description: "Deepening comprehension of neural models, loss functions, optimization, and evaluation frameworks.",
+    icon: "neurology",
+    color: "#38BDF8"
   },
   {
-    title: "Software & AI Engineering Leadership",
-    timeline: "Long-Term Vision",
-    description: "Grow into a versatile software engineer who builds dependable, human-centered technology solutions that make a positive impact.",
-    milestones: [
-      "Lead impactful software engineering initiatives from concept to deployment",
-      "Champion clean code, continuous learning, and thoughtful system design",
-      "Develop solutions addressing real educational and community challenges"
-    ]
+    num: "03",
+    title: "Build Scalable Applications",
+    description: "Architecting responsive web applications with robust component patterns and clean UX.",
+    icon: "web",
+    color: "#9B7BFF"
+  },
+  {
+    num: "04",
+    title: "Learn Backend Engineering & Databases",
+    description: "Mastering relational schemas, SQL queries, RESTful architecture, and asynchronous server workflows.",
+    icon: "database",
+    color: "#38BDF8"
+  },
+  {
+    num: "05",
+    title: "Develop Practical AI-Powered Projects",
+    description: "Deploying applied machine learning solutions that solve real community and productivity needs.",
+    icon: "psychology",
+    color: "#9B7BFF"
+  },
+  {
+    num: "06",
+    title: "Collaborate Through Hackathons",
+    description: "Partnering in collaborative developer events, collegiate challenges, and open-source contributions.",
+    icon: "groups",
+    color: "#38BDF8"
   }
 ];
-
-export const contactDetails = {
-  email: "netravathipolicepatil931@gmail.com",
-  linkedin: "https://www.linkedin.com/in/netravathi-police-patil/",
-  github: "https://github.com/NetravathiPatil",
-  location: "Bengaluru, Karnataka, India",
-  timezone: "IST (UTC +5:30)",
-  availability: "Open to tech internships, project collaborations, and junior engineering opportunities."
-};

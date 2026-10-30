@@ -1,133 +1,211 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { 
-  Code2, Cpu, Database, FileCode, Terminal, Layout, Boxes, 
-  Palette, Monitor, Globe, Layers, Brain, Sliders, Binary, 
-  Sparkles, GitBranch, Search, Zap, CheckCircle2 
-} from 'lucide-react';
+import React from 'react';
+import { motion } from 'motion/react';
+import { Cpu, Terminal, Code, GitBranch, Compass, Network, Brain, Database, Globe } from 'lucide-react';
 import { skillsCategories } from '../data/portfolioData.js';
 
 export default function Skills() {
-  const [activeCategory, setActiveCategory] = useState(0);
-
-  const iconComponents = {
-    Code2, Cpu, Database, FileCode, Terminal, Layout, Boxes, 
-    Palette, Monitor, Globe, Layers, Brain, Sliders, Binary, 
-    Sparkles, GitBranch, Search, Zap
-  };
+  const { 
+    programmingLanguages, 
+    frontendDevelopment, 
+    developerTools, 
+    coreConcepts, 
+    areasOfInterest, 
+    currentlyExploring 
+  } = skillsCategories;
 
   return (
-    <section id="skills" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-14">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400 mb-3">
-            <span>02</span>
-            <span aria-hidden="true">·</span>
-            <span>Technical Skills</span>
+    <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/5" id="skills">
+      {/* Section Header */}
+      <div className="flex flex-col space-y-2 mb-12">
+        <div className="flex items-center gap-2 font-mono text-xs text-[#38BDF8] tracking-widest uppercase">
+          <Cpu className="w-4 h-4 text-[#38BDF8]" />
+          <span>02 / TECHNICAL EXPERTISE</span>
+        </div>
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[#EAF1FF]">
+          The Tools Behind My Ideas.
+        </h2>
+        <p className="font-body text-sm md:text-base text-[#9AA8BF] max-w-2xl">
+          A disciplined stack focused on programmatic problem-solving, structured algorithms, intelligent models, and clean client-side engineering.
+        </p>
+      </div>
+
+      {/* Bento Grid for Skills matching Stitch design */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5">
+        {/* Programming Languages */}
+        <motion.div 
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="lg:col-span-6 glass-card rounded-2xl p-6 border border-white/10 relative overflow-hidden"
+        >
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#9B7BFF] animate-pulse"></span>
+              <h3 className="font-display text-base font-semibold text-[#EAF1FF]">{programmingLanguages.title}</h3>
+            </div>
+            <span className="font-mono text-[10px] text-[#9AA8BF]">{programmingLanguages.subtitle}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4">
-            Programming languages, web frameworks & tools.
-          </h2>
-          <p className="text-base text-slate-400 leading-relaxed">
-            Technologies and tools I work with across frontend engineering, algorithmic programming, and machine learning coursework.
+          <p className="font-body text-xs text-[#9AA8BF] mb-4">
+            {programmingLanguages.description}
           </p>
-        </div>
+          <div className="flex flex-wrap gap-2.5">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#9B7BFF]/15 border border-[#9B7BFF]/40 text-[#9B7BFF] font-mono text-xs">
+              <Code className="w-4 h-4" />
+              <span>Python (Primary Focus)</span>
+            </div>
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#080B14] border border-white/10 text-[#EAF1FF] font-mono text-xs hover:border-white/20 transition-colors">
+              <Terminal className="w-4 h-4 text-[#38BDF8]" />
+              <span>C Language</span>
+            </div>
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#080B14] border border-white/10 text-[#EAF1FF] font-mono text-xs hover:border-white/20 transition-colors">
+              <Globe className="w-4 h-4 text-[#9B7BFF]" />
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </motion.div>
 
-        {/* Interactive Category Selector */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar" role="tablist">
-          {skillsCategories.map((cat, idx) => (
-            <button
-              key={cat.category}
-              onClick={() => setActiveCategory(idx)}
-              role="tab"
-              aria-selected={activeCategory === idx}
-              className={`px-4 py-2.5 text-xs font-semibold rounded-xl whitespace-nowrap transition-all flex items-center gap-2 cursor-pointer ${
-                activeCategory === idx
-                  ? 'bg-gradient-to-r from-violet-600 to-blue-600 text-white shadow-lg shadow-violet-500/20 border border-violet-400/30'
-                  : 'bg-slate-900/80 text-slate-300 hover:text-white hover:bg-slate-850 border border-slate-800'
-              }`}
-            >
-              <span>{cat.category}</span>
-              <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded ${
-                activeCategory === idx ? 'bg-white/20 text-white' : 'bg-slate-800 text-slate-400'
-              }`}>
-                {cat.skills.length}
+        {/* Frontend Web Development */}
+        <motion.div 
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.05 }}
+          className="lg:col-span-6 glass-card rounded-2xl p-6 border border-white/10 relative overflow-hidden"
+        >
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#38BDF8]"></span>
+              <h3 className="font-display text-base font-semibold text-[#EAF1FF]">{frontendDevelopment.title}</h3>
+            </div>
+            <span className="font-mono text-[10px] text-[#9AA8BF]">{frontendDevelopment.subtitle}</span>
+          </div>
+          <p className="font-body text-xs text-[#9AA8BF] mb-4">
+            {frontendDevelopment.description}
+          </p>
+          <div className="flex flex-wrap gap-2.5">
+            {frontendDevelopment.skills.map((s) => (
+              <span key={s.name} className="px-3 py-1.5 rounded-xl bg-[#080B14] border border-white/10 text-[#EAF1FF] font-mono text-xs">
+                {s.name}
               </span>
-            </button>
-          ))}
-        </div>
+            ))}
+          </div>
+        </motion.div>
 
-        {/* Active Category Overview & Skills Grid */}
-        <div className="glass-panel rounded-2xl p-6 sm:p-8 border border-slate-800/90 shadow-xl">
-          <div className="mb-6 pb-6 border-b border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        {/* Developer Tools */}
+        <motion.div 
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="lg:col-span-4 glass-card rounded-2xl p-6 border border-white/10"
+        >
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="font-display text-base font-semibold text-[#EAF1FF]">{developerTools.title}</h3>
+            <Terminal className="w-4 h-4 text-[#9B7BFF]" />
+          </div>
+          <p className="font-body text-xs text-[#9AA8BF] mb-4">
+            {developerTools.description}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {developerTools.skills.map((tool) => (
+              <span key={tool} className="px-2.5 py-1 rounded-lg bg-[#080B14] border border-white/10 font-mono text-xs text-[#EAF1FF]">
+                {tool}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Core Concepts */}
+        <motion.div 
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.15 }}
+          className="lg:col-span-4 glass-card rounded-2xl p-6 border border-white/10"
+        >
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="font-display text-base font-semibold text-[#EAF1FF]">{coreConcepts.title}</h3>
+            <Network className="w-4 h-4 text-[#38BDF8]" />
+          </div>
+          <p className="font-body text-xs text-[#9AA8BF] mb-4">
+            {coreConcepts.description}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {coreConcepts.skills.map((c) => (
+              <span key={c} className="px-2.5 py-1 rounded-lg bg-[#080B14] border border-white/10 font-mono text-xs text-[#EAF1FF]">
+                {c}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Areas of Interest */}
+        <motion.div 
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="lg:col-span-4 glass-card rounded-2xl p-6 border border-white/10"
+        >
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="font-display text-base font-semibold text-[#EAF1FF]">{areasOfInterest.title}</h3>
+            <Brain className="w-4 h-4 text-[#9B7BFF]" />
+          </div>
+          <p className="font-body text-xs text-[#9AA8BF] mb-4">
+            {areasOfInterest.description}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {areasOfInterest.skills.map((area) => (
+              <span
+                key={area.name}
+                className={`px-2.5 py-1 rounded-lg font-mono text-xs ${
+                  area.highlight === 'purple'
+                    ? 'bg-[#9B7BFF]/10 border border-[#9B7BFF]/30 text-[#9B7BFF]'
+                    : area.highlight === 'cyan'
+                    ? 'bg-[#38BDF8]/10 border border-[#38BDF8]/30 text-[#38BDF8]'
+                    : 'bg-[#080B14] border border-white/10 text-[#EAF1FF]'
+                }`}
+              >
+                {area.name}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Currently Exploring Banner */}
+        <motion.div 
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.25 }}
+          className="lg:col-span-12 glass-card rounded-2xl p-5 border border-[#9B7BFF]/20 bg-gradient-to-r from-[#121A2B] via-[#080B14] to-[#121A2B] flex flex-col md:flex-row md:items-center justify-between gap-4"
+        >
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-[#9B7BFF]/15 text-[#9B7BFF] flex items-center justify-center shrink-0">
+              <Compass className="w-5 h-5" />
+            </div>
             <div>
-              <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                <span>{skillsCategories[activeCategory].category}</span>
-              </h3>
-              <p className="text-xs text-slate-400 mt-1">
-                {skillsCategories[activeCategory].description}
-              </p>
-            </div>
-            <div className="text-xs font-mono text-cyan-400 whitespace-nowrap bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800">
-              {skillsCategories[activeCategory].skills.length} competencies
+              <h4 className="font-display text-sm font-semibold text-[#EAF1FF]">{currentlyExploring.title}</h4>
+              <p className="font-body text-xs text-[#9AA8BF]">{currentlyExploring.description}</p>
             </div>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {skillsCategories[activeCategory].skills.map((skill, sIdx) => {
-              const IconComp = iconComponents[skill.icon] || Code2;
-              return (
-                <motion.div
-                  key={skill.name}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.25, delay: sIdx * 0.05 }}
-                  whileHover={{ y: -2 }}
-                  className="p-4 rounded-xl bg-slate-900/70 border border-slate-800/80 hover:border-violet-500/40 hover:bg-slate-850 transition-all flex items-center justify-between group shadow-sm"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-cyan-400 group-hover:text-violet-300 group-hover:border-violet-500/40 group-hover:bg-violet-500/10 transition-all">
-                      <IconComp className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-slate-100 group-hover:text-white transition-colors">
-                        {skill.name}
-                      </h4>
-                      <div className="text-[11px] text-slate-500 font-mono mt-0.5">
-                        {skill.level}
-                      </div>
-                    </div>
-                  </div>
-
-                  <span className="text-[10px] font-mono text-slate-400 px-2 py-0.5 rounded bg-slate-800/60 border border-slate-700/40">
-                    Active
-                  </span>
-                </motion.div>
-              );
-            })}
+          <div className="flex flex-wrap gap-2">
+            {currentlyExploring.tags.map((tag) => (
+              <span
+                key={tag.name}
+                className={`px-3 py-1.5 rounded-full bg-[#080B14] border font-mono text-xs ${
+                  tag.color === 'cyan'
+                    ? 'border-white/10 text-[#38BDF8]'
+                    : tag.color === 'purple'
+                    ? 'border-[#9B7BFF]/40 text-[#9B7BFF]'
+                    : 'border-white/10 text-[#EAF1FF]'
+                }`}
+              >
+                {tag.name}
+              </span>
+            ))}
           </div>
-        </div>
-
-        {/* Global Competency Highlights */}
-        <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
-          <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/70 hover:border-violet-500/30 transition-colors">
-            <div className="text-lg font-bold text-white font-mono">React & JS</div>
-            <div className="text-xs text-slate-400 mt-1">Web Applications</div>
-          </div>
-          <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/70 hover:border-cyan-500/30 transition-colors">
-            <div className="text-lg font-bold text-white font-mono">HTML & CSS</div>
-            <div className="text-xs text-slate-400 mt-1">Responsive UI/UX</div>
-          </div>
-          <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/70 hover:border-blue-500/30 transition-colors">
-            <div className="text-lg font-bold text-white font-mono">Python & C++</div>
-            <div className="text-xs text-slate-400 mt-1">Algorithms & Logic</div>
-          </div>
-          <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/70 hover:border-emerald-500/30 transition-colors">
-            <div className="text-lg font-bold text-white font-mono">AI Concepts</div>
-            <div className="text-xs text-slate-400 mt-1">B.Tech (AI & ML)</div>
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
